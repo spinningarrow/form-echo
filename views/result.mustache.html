@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Form Echo</title>
+	</head>
+	<style>
+		html {
+			background: hsl(240, 100%, 98%);
+		}
+
+		body {
+			background: white;
+			box-shadow: 0 0 10px #eee;
+			font-family: sans-serif;
+			margin: 2em auto;
+			max-width: 600px;
+			padding: 1em 2em;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 3em 0 2em;
+			width: 100%;
+		}
+
+		tr {
+			border-bottom: 1px solid #eee;
+		}
+
+		tr:last-child {
+			border: 0;
+		}
+
+		tr:nth-child(even) {
+			background: hsl(0, 0%, 98%);
+		}
+
+		td {
+			padding: 0.5em;
+		}
+	</style>
+	<body>
+		<h1>Thanks!</h1>
+		<p>Your response has been submitted.</p>
+
+		<p>Here are the details you entered:</p>
+
+		<table>
+			{{#data}}
+			<tr>
+				<td>{{key}}</td>
+				<td>{{value}}</td>
+			</tr>
+			{{/data}}
+		</table>
+
+		{{^data}}
+		<p><strong>No data submitted.</strong></p>
+		{{/data}}
+	</body>
+</html>
